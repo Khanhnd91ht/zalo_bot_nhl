@@ -1,0 +1,60 @@
+{
+  "name": "Zalo Public Webhook Example",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "zalo",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "d07b5075-ef21-4c96-b411-7b8c41e746e4",
+      "name": "Zalo Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        280,
+        300
+      ],
+      "webhookId": "zalo"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { ok: true, receivedAt: new Date().toISOString(), body: $json.body } }}",
+        "options": {}
+      },
+      "id": "fa4c11ad-3c57-4621-8262-198bc09eb707",
+      "name": "Respond OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.1,
+      "position": [
+        560,
+        300
+      ]
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Zalo Webhook": {
+      "main": [
+        [
+          {
+            "node": "Respond OK",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "c7d90d6d-1afa-41a7-8668-6dd8c0d62d57",
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "tags": []
+}

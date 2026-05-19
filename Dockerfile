@@ -1,0 +1,13 @@
+FROM n8nio/n8n:latest
+
+ENV N8N_LISTEN_ADDRESS=0.0.0.0 \
+    N8N_PORT=5678 \
+    N8N_PROTOCOL=https \
+    N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true \
+    N8N_SECURE_COOKIE=true
+
+EXPOSE 5678
+
+VOLUME ["/home/node/.n8n"]
+
+CMD ["start"]
