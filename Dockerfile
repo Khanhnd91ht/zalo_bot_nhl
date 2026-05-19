@@ -8,6 +8,4 @@ ENV N8N_LISTEN_ADDRESS=0.0.0.0 \
 
 EXPOSE 5678
 
-VOLUME ["/home/node/.n8n"]
-
 CMD ["start"]
