@@ -5,7 +5,6 @@ Project này deploy n8n lên Railway bằng Docker, dùng biến môi trường,
 ## Files
 
 - `Dockerfile`: chạy image `docker.n8n.io/n8nio/n8n`.
-- `start.sh`: map `PORT` của Railway sang `N8N_PORT`.
 - `railway.toml`: cấu hình build/deploy cho Railway.
 - `docker-compose.yml`: chạy local với volume `n8n_data`.
 - `.env.example`: danh sách biến môi trường cần set.
@@ -65,7 +64,7 @@ N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
 N8N_DIAGNOSTICS_ENABLED=false
 ```
 
-Không cần set `N8N_PORT` trên Railway. `start.sh` sẽ tự lấy biến `PORT` do Railway cấp.
+Không cần set `N8N_PORT` trên Railway. Docker command sẽ tự lấy biến `PORT` do Railway cấp.
 
 `N8N_ENCRYPTION_KEY` phải được giữ cố định. Nếu đổi key sau khi đã tạo credentials, n8n có thể không đọc được credentials cũ.
 
