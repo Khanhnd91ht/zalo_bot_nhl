@@ -1,11 +1,12 @@
 FROM docker.n8n.io/n8nio/n8n:latest
 
 ENV N8N_LISTEN_ADDRESS=0.0.0.0 \
-    N8N_PORT=${PORT:-5678} \
     N8N_PROTOCOL=http \
     N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true \
     N8N_SECURE_COOKIE=false
 
-EXPOSE ${PORT:-5678}
+EXPOSE 5678
 
-CMD ["start"]
+COPY start.sh /start.sh
+
+CMD ["sh", "/start.sh"]
