@@ -7,4 +7,6 @@ ENV N8N_LISTEN_ADDRESS=0.0.0.0 \
 
 EXPOSE 5678
 
+ENTRYPOINT []
+
 CMD ["sh", "-c", "export N8N_PORT=${PORT:-${N8N_PORT:-5678}} && exec n8n start"]
