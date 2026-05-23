@@ -4,7 +4,7 @@ Project này deploy n8n lên Railway bằng Docker, dùng biến môi trường,
 
 ## Files
 
-- `Dockerfile`: chạy image `docker.n8n.io/n8nio/n8n`.
+- `Dockerfile`: chạy image `n8nio/n8n:2.21.4`.
 - `railway.toml`: cấu hình build/deploy cho Railway.
 - `docker-compose.yml`: chạy local với volume `n8n_data`.
 - `.env.example`: danh sách biến môi trường cần set.
